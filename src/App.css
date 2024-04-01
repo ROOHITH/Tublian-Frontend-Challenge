@@ -1,0 +1,963 @@
+/* styles.css */
+@font-face {
+  font-family: 'Aeonik-Regular';
+  src: url('../src/assets/fonts/Aeonik-Regular.otf') format('truetype');
+ 
+}
+@font-face {
+  font-family: 'Aeonik-Bold';
+  src: url('../src/assets/fonts/Aeonik-Bold.otf') format('truetype');
+ 
+}
+@font-face {
+  font-family: 'Aeonik-Medium';
+  src: url('../src/assets/fonts/Aeonik-Medium.otf') format('truetype');
+ 
+}
+*{
+  font-family: 'Aeonik-Regular' !important;
+}
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard {
+  display: flex;
+  width: 100%;
+}
+
+.content {
+  width: calc(100vw - 218px);
+  /* Subtract the sidebar width */
+  height: 100vh;
+  overflow-y: scroll;
+  flex: 1;
+  /* Allow content to take remaining space */
+}
+
+.content::-webkit-scrollbar {
+  width: 0 !important;
+  display: none !important;
+}
+
+.main::-webkit-scrollbar {
+  width: 0 !important;
+  display: none !important;
+}
+
+.main {
+
+  overflow-y: auto;
+  /* Enable vertical scrolling for main content */
+}
+
+/* Sidebar styles */
+.side-menu {
+
+  overflow-y: auto;
+  width: 218px;
+  min-height: 100vh;
+
+
+  background: #FFFFFF;
+  background-color: #ff3333;
+
+  overflow-x: hidden;
+
+  height: 100vh;
+
+
+  position: relative;
+  /* Set position relative for absolute positioning */
+
+  display: flex;
+  flex-direction: column;
+
+  transition: width 0.3s ease;
+}
+
+.side-menu h1 {
+  margin-bottom: 20px;
+}
+
+.side-menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.side-menu li {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.side-menu li:hover {
+  color: #333;
+  font-weight: bold;
+}
+
+/* Content styles */
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.main {
+  flex: 1;
+  padding: 32px;
+  background: #FBFBFB;
+
+  overflow-y: auto;
+  /* Enable vertical scrolling for main content */
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+
+  /* For screens smaller than 768px (tablets and smaller devices) */
+  .content {
+    flex-direction: column;
+  }
+
+  .side-menu {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .main {
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .side-menu {
+    display: none !important;
+  }
+  .top-menu  {
+    flex-direction: column !important;
+  }
+  /* For screens smaller than 576px (phones and smaller devices) */
+  .top-menu button {
+    display: none;
+  }
+  .main-box-followers-like-comments {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .main-container-2 {
+    flex-direction: column !important;
+  }
+}
+
+/**/
+/*side Menu*/
+/* SideMenu.css */
+.side-menu {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #FFFFFF;
+
+  /* Other styles for the sidebar */
+}
+
+.title-img-box {
+  margin: 20px auto;
+  /* Adjust as needed */
+  margin-left: calc(50% - 52.13px/2 + 0.06px);
+  margin-top: 47px;
+  margin-bottom: 53.62px;
+}
+
+.title-img {
+
+  width: 52.13px;
+  height: 19.38px;
+
+}
+
+.menu-title {
+  text-align: center;
+
+  background: #0FA44A;
+
+  height: 45px;
+
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+
+  align-items: center;
+  /* Center content vertically */
+  padding-left: 29px;
+  padding-right: 30px;
+  margin-bottom: 29px;
+}
+
+.dashboard-img {
+
+  /* width: 18px;
+  height: 18px; */
+  width: 22px;
+  height: 19px;
+}
+
+.menu-name {
+  margin-left: 16px;
+  text-align: center;
+
+  font-family: Aeonik;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #FFFFFF;
+
+  text-transform: capitalize;
+
+}
+
+.menu-item {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+
+
+
+}
+
+.menu-item img {
+  /* width: 18px;
+  height: 18px; */
+  width: 22px;
+  height: 19px;
+
+
+
+}
+
+.menu-item li {
+  margin-left: 29px;
+  margin-bottom: 29px;
+  display: flex;
+  align-items: baseline;
+}
+
+.menu-item .menuList-name {
+  margin-left: 16px;
+  font-family: 'Aeonik';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #323232;
+
+  text-transform: capitalize;
+  width: 80px;
+  height: 14px;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+
+.logout-button-box {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+  /* Align button to the end of the container */
+  margin-top: auto;
+  width: 100%;
+  height: 50px;
+  /* Adjust as needed */
+
+  border: none;
+  cursor: pointer;
+  padding-left: 33px;
+  align-items: center;
+}
+
+.logout-img {
+  margin-left: 29px;
+  width: 22px;
+  height: 19px;
+
+}
+
+.logout-button-box span {
+  text-align: center;
+  align-self: center;
+  margin-left: 16px;
+  color: #0FA44A;
+  font-family: 'Aeonik';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+
+/* Top menu styles */
+.top-menu {
+  height: 92px;
+
+  background: #FFFFFF;
+
+  color: #fff;
+
+  display: flex;
+
+  align-items: center;
+  flex-direction: row;
+  padding-left: 33px;
+}
+
+.top-menu .top-menu-text {
+  color: #1A1A1A;
+  font-family: Aeonik;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+
+}
+
+.search-img {
+  position: relative;
+  left: 33px;
+  top: 40px;
+
+}
+
+.search-input {
+  width: 427px;
+  height: 48px;
+  border: 1px solid #8F8F8F;
+  border-radius: 4px;
+
+  opacity: 0.5;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  outline: none;
+  padding-left: 65px;
+  font-family: Aeonik;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+
+}
+
+.top-menu-box {
+  flex: 1;
+}
+
+.box-1 {}
+
+.box-2 {
+  align-self: baseline;
+}
+
+.box-3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-right: 33px;
+
+}
+
+.top-menu-profile-picture {
+  display: flex;
+  align-items: center;
+  margin-right: 12px;
+}
+
+.top-menu-profile-details {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.profile-name {
+  font-family: Aeonik;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #1A1A1A;
+
+}
+
+.profile-email {
+  font-family: Aeonik;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #131313;
+  opacity: 0.4;
+  margin-top: 7px;
+}
+
+/*DashboardContent*/
+.performance-metric-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+
+}
+
+
+
+.performance-box-1 .performance-box-text {
+  font-family: Aeonik;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: left;
+
+
+}
+
+
+
+.download-button {
+  /* Styles for the download button */
+  color: #0FA44A;
+  border: 0px;
+  outline: none;
+  cursor: pointer;
+  font-family: Aeonik;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  background: transparent;
+  padding: 0px;
+
+
+}
+
+.performance-box-2 {
+ 
+  border-bottom: 1px solid #0FA44A !important;
+}
+
+.main-box-followers-like-comments {
+  display: flex;
+  flex-direction: row;
+  gap: 36px;
+}
+
+.main-box-followers-like-comments .main-box-sub-box {
+  width: 250px;
+  height: 160px;
+  border-radius: 4px;
+
+  background: #FFFFFF;
+
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+.main-box-sub-box {
+  gap: 25px;
+}
+
+.main-box-sub-box .sub-box-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* Align items at start and end */
+  align-items: center;
+  /* Vertically center items */
+
+}
+
+.main-box-sub-box .sub-box-1 .sub-box-text {
+  font-family: Aeonik;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+
+}
+
+.main-box-sub-box .sub-box-1 .followers-expand-icon {
+  width: 10.83px;
+  height: 10.83px;
+
+
+
+}
+
+.sub-box-2 .sub-box-text-2 {
+  font-family: "Aeonik-Medium" !important;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 48px;
+  letter-spacing: 0em;
+  text-align: left;
+
+}
+
+.sub-box-3 {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* Align items at start and end */
+  align-items: center;
+  padding-right: 5px;
+}
+
+.sub-box-percentage {
+  font-family: Aeonik;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  margin-left: 4px;
+  color: #0FA44A;
+  margin-right: 9px;
+}
+
+.remain-text {
+  font-family: Aeonik;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #6A6A6A;
+
+}
+
+.main-container-2 {
+  display: flex;
+  flex-direction: row;
+  margin-top: 32px;
+  gap: 46px;
+}
+
+.main-container-2 .sub-container {
+  flex: 1;
+}
+
+.filter-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* Align items at start and end */
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+
+.css-11ez8r8-MuiInputBase-root-MuiFilledInput-root-MuiSelect-root::before,
+.css-11ez8r8-MuiInputBase-root-MuiFilledInput-root-MuiSelect-root,
+.css-1uxera-MuiInputBase-root-MuiFilledInput-root-MuiSelect-root::before {
+  border-bottom: none !important;
+}
+
+/* Style the select root */
+.select-root {
+  /* Your custom styles for the select root */
+  font-family: Aeonik;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+
+}
+
+/* Style the select icon */
+.select-icon {
+  /* Your custom styles for the select icon */
+}
+
+/* Style the filled select */
+.MuiSelect-filled {
+  /* Your custom styles for the filled select */
+}
+
+/* Style the filled select before pseudo-element */
+.MuiSelect-filled::before {
+  bottom-border: none !important;
+  /* Your custom styles for the filled select before pseudo-element */
+}
+
+.css-1gzkxga-MuiSelect-select-MuiInputBase-input-MuiFilledInput-input.css-1gzkxga-MuiSelect-select-MuiInputBase-input-MuiFilledInput-input.css-1gzkxga-MuiSelect-select-MuiInputBase-input-MuiFilledInput-input {
+  padding-right: 0px !important;
+}
+
+.sub-container-3 {
+  width: 450px;
+  height: 369px;
+
+  border-radius: 4px;
+  background: #FFFFFF;
+  padding: 32px;
+}
+
+.sub-container-4 {
+  /* min-width: 450px;
+  width: auto;
+  height: 369px; */
+  border-top: 1px solid rgba(143, 143, 143, 0.1);
+  border-radius: 4px;
+  background: #FFFFFF;
+  padding: 32px;
+
+}
+.container-1{
+  
+}
+
+.sub-container-1 {
+  width: auto;
+  height: 369px;
+
+  border-radius: 4px;
+  background: #FFFFFF;
+  margin-bottom: 32px;
+}
+
+canvas {
+  width: auto !important;
+  padding: 20px;
+}
+
+.Post-activity-image {
+  width: 36px;
+  height: 37px;
+
+  gap: 0px;
+  border-radius: 4px 0px 0px 0px !important;
+  opacity: 0px;
+
+}
+
+.list-text-post-box {
+ 
+  height: 22px;
+  text-align: justify;
+
+  gap: 0px;
+  opacity: 0px;
+  text-align: justify; /* Justify the text */
+ 
+ 
+  text-overflow: ellipsis; 
+}
+
+.list-text-post {
+  width: 153px;
+  font-family: Aeonik;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.4px;
+  text-align: left;
+
+}
+
+.rate-text {
+  font-family: Aeonik;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14.4px;
+  text-align: left;
+  align-self: center;
+  margin-left: 8px;
+
+}
+
+.date-text {
+  font-family: Aeonik;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14.4px;
+  text-align: left;
+
+}
+
+.post-acivity-main-box {
+  margin-top: 20px !important;
+
+  background: #FFFFFF;
+
+}
+
+.sub-head {
+  font-family: Aeonik;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+
+}
+
+.post-visbale-img {
+  width: 20px;
+  height: 20px;
+  gap: 0px;
+  opacity: 0px;
+
+}
+
+.demograph-box {
+  width: 500px;
+}
+
+/* Example CSS */
+.circle {
+  width: 20px;
+  /* Adjust circle size as needed */
+  height: 20px;
+  /* Adjust circle size as needed */
+  border-radius: 50%;
+  /* Make circle shape */
+  display: inline-block;
+  margin-right: 5px;
+  /* Adjust margin between circle and label */
+  /* Ellipse 3 */
+
+  width: 8px;
+  height: 8px;
+
+  background: #283350;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  align-items: flex-end;
+}
+
+.label {
+  font-family: Aeonik;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.4px;
+  text-align: left;
+
+}
+
+.doughnut-graph-container {
+  width: 100%;
+  max-width: 500px; /* Adjust as needed */
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.doughnut-graph-canvas {
+  display: block;
+  box-sizing: border-box;
+  /* Remove height and width properties */
+  /* height: 435px; */
+  /* width: 450px; */
+  max-width: 100%; /* Ensure the canvas fills its container */
+  height: auto;
+}
+
+
+.location-text {
+  font-family: Aeonik;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  text-align: left;
+  color: #131313;
+  align-self: center;
+}
+
+.see-more {
+
+  height: 32px;
+  gap: 0px;
+  border-radius: 4px 0px 0px 0px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+
+  font-family: Aeonik;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.8px;
+
+  color: #0FA44A !important;
+
+
+  border: 1px solid #0FA44A !important
+}
+
+table,
+.css-11xur9t-MuiPaper-root-MuiTableContainer-root {
+  box-shadow: none !important;
+}
+
+table thead tr th {
+  color: #8F8F8F !important;
+
+  gap: 0px !important;
+  border: 1px 0px 0px 0px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  padding-bottom: 9px !important;
+  border-bottom: 1px solid rgba(143, 143, 143, 0.3) !important;
+}
+
+
+table tbody tr th {
+  font-family: Aeonik;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.8px;
+  text-align: left;
+padding-left: 0px !important;
+  padding-bottom: 9px !important;
+  padding-top: 9px !important;
+  margin-top: 9px !important;
+  margin-bottom: 9px !important;
+  border-bottom: 1px solid rgba(143, 143, 143, 0.1) !important;
+}
+
+table tbody tr td {
+  padding-right: 0px !important;
+  padding-bottom: 9px !important;
+  padding-top: 9px !important;
+  margin-top: 9px !important;
+  margin-bottom: 9px !important;
+  border-bottom: 1px solid rgba(143, 143, 143, 0.1) !important;
+}
+
+table tbody tr td:nth-child(2) img {
+  width: 8px;
+  height: 9px;
+  gap: 0px;
+
+  opacity: 0px;
+}
+
+.visitor-index {
+  font-family: Aeonik;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.8px;
+
+
+
+  color: #131313;
+
+}
+
+.visitor-surge {
+  font-family: Aeonik;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 9.6px;
+
+  color: #0FA44A;
+}
+.ageBarGraph{
+  
+}
+
+.legend-head-span{
+  color:#131313;
+font-size: 16px;
+font-weight: 400;
+line-height: 19.2px;
+text-align: left;
+
+}
+
+
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+  /* CSS styles for extra small devices */
+  .top-menu {
+    height: auto;
+  }
+  .search-input {
+    width: auto;
+   }
+   .box-2{
+    align-self: center;
+   }
+   .search-img {
+    position: relative;
+    left: 33px;
+    top: 1px;
+}
+.Audience-container-box{
+  flex-direction: column !important;
+}
+}
+
+/* Small devices (phones, 576px and up) */
+@media (min-width: 576px) {
+  /* CSS styles for small devices */
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+  /* CSS styles for medium devices */
+  .search-input {
+   width: auto;
+  }
+  .side-menu{
+    width: 52px !important;
+  }
+ 
+  .main-container-2 {
+    flex-direction: column;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (max-width: 992px) {
+  /* CSS styles for large devices */
+  
+  .Audience-container-box{
+    flex-direction: column !important;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  /* CSS styles for extra large devices */
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 2560px) {
+  /* CSS styles for extra large devices */
+  .search-img {
+    position: relative;
+    left: 33px;
+    top: 5px;
+}
+}
