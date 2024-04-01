@@ -143,9 +143,9 @@ const DashboardContent = () => {
                                 <em>None</em>
                             </MenuItem>
                             <MenuItem value={1}>Weekly</MenuItem>
-                            <MenuItem value={2}>Week 2</MenuItem>
-                            <MenuItem value={3}>Week 3</MenuItem>
-                            <MenuItem value={4}>Week 4</MenuItem>
+                            <MenuItem value={2}>Weekly</MenuItem>
+                            <MenuItem value={3}>Weekly</MenuItem>
+                            <MenuItem value={4}>Weekly</MenuItem>
                         </Select>
                     </FormControl>
 
